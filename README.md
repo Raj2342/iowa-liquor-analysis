@@ -31,8 +31,11 @@ Our brand is bleeding market share and physical shelf space, but our sales and e
    * *Question:5* When are the peak buying seasons for the overall category, and are we capturing our expected share of revenue during those high-volume months compared to the major market players?
 
 ---
+## ELT Architecture and Data flow
+<img width="732" height="251" alt="iow_liquor" src="https://github.com/user-attachments/assets/fe063777-7c80-4b7b-8681-3f1ebc7926ed" />
 
 
+--
 
 
 ## 📈 Final Deliverable: Business Intelligence & Actionable Insights
@@ -45,4 +48,12 @@ https://app.powerbi.com/view?r=eyJrIjoiYmE0NGE1ZGEtOTlhYy00N2ZkLTliNzYtODIzNzZhM
 <img width="1416" height="790" alt="image" src="https://github.com/user-attachments/assets/bdfccf22-5dcd-4974-b71f-68fd20756352" />
 <img width="1038" height="792" alt="image" src="https://github.com/user-attachments/assets/eb54c370-3864-4ae3-9e46-1f2f8417b371" />
 
+---
+## 📁 Data Sourcing & Scale
 
+To ensure adherence to data privacy while working with enterprise-scale volumes, this independent case study leverages the official **Iowa Liquor Sales** dataset, hosted natively within the **Google BigQuery Public Datasets** program. 
+
+the data extraction and processing were handled programmatically to simulate a cost-optimized, modern data architecture:
+
+* **Cloud Extraction (Google Colab):** The raw transaction logs were queried directly from the BigQuery public data registry (`bigquery-public-data.iowa_liquor_sales`) via Python inside a Google Colab environment.
+* **Storage & Compute Optimization (Parquet + DuckDB):** Instead of running expensive analytical queries directly on BigQuery, the heavy partitions were extracted and converted into highly compressed **Apache Parquet** files. These files were then queried locally in-memory using **DuckDB** and SQL, demonstrating a highly efficient, decoupled compute-and-storage architecture before pushing the final aggregates to Power BI.
