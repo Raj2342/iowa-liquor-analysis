@@ -1,3 +1,44 @@
+# 🥃 Iowa Liquor Sales: Competitor Intelligence & Market Share Recovery
+
+<p>
+  <img src="https://img.shields.io/badge/DuckDB-FFF000?style=flat&logo=duckdb&logoColor=black" alt="DuckDB">
+  <img src="https://img.shields.io/badge/Apache_Parquet-00A3A3?style=flat&logo=apacheparquet&logoColor=white" alt="Parquet">
+  <img src="https://img.shields.io/badge/Google_Colab-F9AB00?style=flat&logo=googlecolab&logoColor=white" alt="Colab">
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=flat&logo=postgresql&logoColor=white" alt="SQL">
+  <img src="https://img.shields.io/badge/Power_BI_%2B_DAX-F2C811?style=flat&logo=powerbi&logoColor=black" alt="Power BI">
+</p>
+
+*An enterprise-grade business intelligence case study utilizing DuckDB and Parquet for high-speed in-memory analytics, focused on market share recovery, competitor distribution gaps, and tactical field sales optimization.*
+
+---
+
+## 🎯 The Business Problem: The Market Share Bleed
+
+Imagine a mid-sized liquor vendor operating in the highly regulated Iowa market. Looking at their quarterly financial reports, the reality is brutal: they are losing money, losing market share, and losing physical shelf space to direct competitors.
+
+The core problem isn't a lack of data; the state of Iowa provides a massive, public dataset of every single drop of liquor sold. The problem is a lack of *actionable intelligence*. Right now, the vendor's regional managers are flying blind. They know they are losing, but they don't know *where* or *why*. Their field sales representatives are driving county to county, guessing which stores to visit and which products to pitch. Meanwhile, their competitors are systematically poaching their highest-value accounts.
+
+**The Objective:**
+Our brand is bleeding market share and physical shelf space, but our sales and executive teams lack the localized, tactical data required to pinpoint exactly where we are losing, which specific competitors are beating us, and which individual stores we must target to recover lost revenue. The business requires an automated intelligence engine to stop the bleed and direct our field reps exactly where to strike.
+
+---
+
+## ⚙️ Core Analytical Execution & Sub-Questions
+   * *Question:1* Are we losing ground to our primary competitor in overall market share and physical store presence?
+   * *Question:2* Geographically, where is our specific brand bleeding the most compared to the overall market?
+   * *Question:3* Within our target counties, which specific cities have the largest distribution gaps where our competitor's products are more widely available than ours?
+   * *Question:4* At the exact store level, what specific product assortment or sales velocity gaps exist that our sales reps can action immediately to win back revenue?
+   * *Question:5* When are the peak buying seasons for the overall category, and are we capturing our expected share of revenue during those high-volume months compared to the major market players?
+
+---
+
+
+
+
+## 📈 Final Deliverable: Business Intelligence & Actionable Insights
+
+https://app.powerbi.com/view?r=eyJrIjoiYmE0NGE1ZGEtOTlhYy00N2ZkLTliNzYtODIzNzZhMjkyOWYwIiwidCI6IjM0YmQ4YmVkLTJhYzEtNDFhZS05ZjA4LTRlMGEzZjExNzA2YyJ9
+
 <img width="1250" height="803" alt="image" src="https://github.com/user-attachments/assets/0491eedc-de63-472d-a6ea-9863b9798e10" />
 <img width="1082" height="790" alt="image" src="https://github.com/user-attachments/assets/871ef942-b74c-4c70-a4a2-dbff9e302529" />
 <img width="1328" height="795" alt="image" src="https://github.com/user-attachments/assets/75c39e88-c45c-4864-bc45-e064208c4ec0" />
