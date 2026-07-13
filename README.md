@@ -36,6 +36,56 @@ Our brand is bleeding market share and physical shelf space, but our sales and e
 
 
 --
+### 🧠 Core Engineering Logic: Geographic Standardization (Demo Snippet)
+
+*📌 Note: When tracking market share and distribution gaps at a local level, dirty geographic data is the biggest threat. In public datasets, inconsistent casing and hidden whitespace (e.g., "Des Moines" vs " DES  MOINES ") fracture data aggregations, making market share appear smaller than it is. Below is the Python/DuckDB snippet used in Google Colab to rigorously standardize this data in-memory before pushing it to Power BI.*
+
+```python
+# Snippet from: Google Colab (Data Preprocessing Layer)
+# Executing DuckDB SQL directly on Parquet files for ultra-fast cleaning
+
+q = """
+CREATE OR REPLACE VIEW sales_history_v2 AS
+SELECT 
+    * EXCLUDE(city, county),
+    
+    -- 1. City Standardization: Eradicating ghost spaces, inconsistent cases, and nulls
+    COALESCE(
+        NULLIF(
+            TRIM(
+                REGEXP_REPLACE(
+                    UPPER(city),
+                    '\s+', -- Matches any whitespace character (spaces, tabs, newlines)
+                    ' ',   -- Replaces multiple/ghost spaces with ONE standard space
+                    'g'    -- Global flag: applies to the entire string
+                )
+            ),
+        ''),
+    'UNKNOWN') AS clean_city,
+
+    -- 2. County Standardization: Ensuring accurate geographic market share roll-ups
+    COALESCE(
+        NULLIF(
+            TRIM(
+                REGEXP_REPLACE(
+                    UPPER(county),
+                    '\s+',
+                    ' ',
+                    'g'
+                )
+            ),
+        ''),
+    'UNKNOWN') AS clean_county
+
+FROM sales_history_v1
+"""
+
+# Execute the heavy lifting entirely in-memory using DuckDB
+duckdb.query(q)
+print("Geographic Standardization Complete.")
+
+```
+--
 
 
 ## 📈 Final Deliverable: Business Intelligence & Actionable Insights
